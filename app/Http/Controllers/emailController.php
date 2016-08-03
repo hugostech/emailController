@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\customer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +14,11 @@ class emailController extends Controller
         $email_content = $request->input('email_content');
         if(!empty(trim($email_content))){
             $subject = $request->input('email_subject');
-            self::mailSend('Hugo Wang','a366232446@gmail.com',$email_content,$subject);
+            $customers = customer::all();
+            foreach($customers as $customer){
+                echo $customer->firstname.' '.$customer->lastname.' '.$customer->email.' '.$subject;
+            }
+//            self::mailSend('Hugo Wang','a366232446@gmail.com',$email_content,$subject);
         }
     }
 
