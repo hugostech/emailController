@@ -15,10 +15,13 @@ class emailController extends Controller
         if(!empty(trim($email_content))){
             $subject = $request->input('email_subject');
             $customers = customer::all();
-            foreach($customers as $customer){
-                echo $customer->first_name.' '.$customer->last_name.' '.$customer->email.' '.$subject;
+            foreach($customers as $key=>$customer){
+//                echo .' '.$customer->email.' '.$subject;
+                $name = $customer->first_name.' '.$customer->last_name;
+                self::mailSend($name,$customer->email,$email_content,$subject);
+                echo ' <del>'.$customer->email.'</del>'.$key.'<br> ';
+
             }
-//            self::mailSend('Hugo Wang','a366232446@gmail.com',$email_content,$subject);
         }
     }
 
