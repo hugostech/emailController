@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
-use App\Ex_old_customer;
+use App\Ex_old_Customer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,7 +12,7 @@ class customerController extends Controller
 {
     public function customerTransfer(){
         $old_customers = Ex_old_customer::all();
-        dd($old_customers);
+//        dd($old_customers);
         foreach($old_customers as $old_customer){
             $customer  = new Customer();
             $customer->gender = $old_customer->customers_gender;
