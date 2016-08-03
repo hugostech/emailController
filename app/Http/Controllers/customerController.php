@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
-use App\Ex_old_Customer;
+use App\Ex_old_customer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,6 +21,7 @@ class customerController extends Controller
             $customer->last_name = $old_customer->customers_lastname;
             $customer->birth_date = $old_customer->customers_dob;
             $customer->phone = $old_customer->customers_telephone;
+            $customer->save();
         }
     }
 
