@@ -12,6 +12,7 @@ class customerController extends Controller
 {
     public function customerTransfer(){
         $old_customers = Ex_old_customer::all();
+        dd($old_customers);
         foreach($old_customers as $old_customer){
             $customer  = new Customer();
             $customer->gender = $old_customer->customers_gender;
