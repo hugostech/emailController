@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('console');
 });
+Route::get('console','emailController@console');
+Route::post('sendEmail','emailController@sendEmail');
+Route::get('sync','customerController@customerTransfer');

@@ -77,6 +77,18 @@ return [
             'prefix' => '',
             'schema' => 'public',
         ],
+        'old_extremepc_mysql' => [
+
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST_old', 'extremepc.co.nz'),
+            'database'  => env('DB_DATABASE_old', 'forge'),
+            'username'  => env('DB_USERNAME_old', 'forge'),
+            'password'  => env('DB_PASSWORD_old', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
 
     ],
 
