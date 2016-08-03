@@ -16,7 +16,7 @@ class emailController extends Controller
             $subject = $request->input('email_subject');
             $customers = customer::all();
             foreach($customers as $customer){
-                echo $customer->firstname.' '.$customer->lastname.' '.$customer->email.' '.$subject;
+                echo $customer->first_name.' '.$customer->last_name.' '.$customer->email.' '.$subject;
             }
 //            self::mailSend('Hugo Wang','a366232446@gmail.com',$email_content,$subject);
         }
