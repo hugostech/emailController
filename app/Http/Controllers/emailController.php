@@ -18,10 +18,11 @@ class emailController extends Controller
             foreach($customers as $key=>$customer){
 //                echo .' '.$customer->email.' '.$subject;
                 $name = $customer->first_name.' '.$customer->last_name;
-                self::mailSend($name,$customer->email,$email_content,$subject);
+//                self::mailSend($name,$customer->email,$email_content,$subject);
                 echo ' <del>'.$customer->email.'</del>'.$key.'<br> ';
 
             }
+            self::mailSend('Hugo Wang','a366232446@gmail.com',$email_content,$subject);
         }
     }
 
